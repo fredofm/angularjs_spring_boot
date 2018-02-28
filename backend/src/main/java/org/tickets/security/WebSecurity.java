@@ -1,11 +1,14 @@
 package org.tickets.security;
 
+import static org.tickets.security.SecurityConstants.AUTHORIZATION_HEADER_STRING;
 import static org.tickets.security.SecurityConstants.SIGN_UP_URL;
 
 import java.util.Arrays;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -14,9 +17,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import static org.tickets.security.SecurityConstants.AUTHORIZATION_HEADER_STRING;
-
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(securedEnabled = true)
 public class WebSecurity extends WebSecurityConfigurerAdapter {
  /*   private UserDetailsService userDetailsService;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -65,9 +67,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
        // with this option you must implement a UserDetailService
 
        auth.inMemoryAuthentication()
-        .withUser("admin").password("password").roles("ROLE_ADMIN")
+        .withUser("admin").password("password").roles("ADMIN")
         .and()
-        .withUser("user").password("user").roles("ROLE_USER");
+        .withUser("user").password("user").roles("USER");
         
     }
 

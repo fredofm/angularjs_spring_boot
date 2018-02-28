@@ -35,7 +35,7 @@ public class TicketManagerController {
         this.ticketService = ticketService;
     }
 
-    @Secured({"ROLE_USER", "ROLE_ADMIN"})
+    @Secured({"ROLE_ADMIN"})
     @GetMapping("/tickets")
     public ResponseEntity<List<TicketDTO>> getTickets() {
         List<TicketDTO> ticketList = ticketService.findAll();
