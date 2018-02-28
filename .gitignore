@@ -3,4 +3,4 @@ frontend/node_modules
 backend/bin
 backend/build
 backend/libs
-backend/**/*.lock
+backend/.gradle
