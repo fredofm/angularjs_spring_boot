@@ -5,7 +5,6 @@ import static org.tickets.security.SecurityConstants.SECRET;
 import static org.tickets.security.SecurityConstants.TOKEN_PREFIX;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
