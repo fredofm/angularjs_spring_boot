@@ -1,0 +1,33 @@
+{
+    "name": "ticket-manager",
+    "version": "0.0.1",
+    "authors": [
+      "esalfe"
+    ],
+    "description": "Angular ticket RESTful client",
+    "main": "index.html",
+    "keywords": [
+      "angular",
+      "restful",
+      "client"
+    ],
+    "license": "GNU",
+    "private": true,
+    "ignore": [
+      "**/.*",
+      "node_modules",
+      "bower_components",
+      "test",
+      "tests"
+    ],
+    "dependencies": {
+      "angular": "1.6.9",
+      "bootstrap": "3.3.4",
+      "bootstrap-css": "3.3.7",
+      "angular-ui-router": "1.0.15",
+      "angular-resource": "1.6.9",
+      "jquery": "3.3.1",
+      "angular-sessionstorage": "1.1.5",
+      "angular-jwt": "0.1.9"
+    }
+  }

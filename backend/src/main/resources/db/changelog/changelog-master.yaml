@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: esalfe
+      changes:
+        - createTable:
+            tableName: tickets
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: company
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: codenumber
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 2
+      author: esalfe
+      changes:
+        - createSequence:
+            cycle: false
+            incrementBy: 1
+            maxValue: 9999999999
+            minValue: 1
+            ordered: true
+            sequenceName: ticket_sequence
+            startValue: 1
+
+  - changeSet:
+      id: 3
+      author: esalfe
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(255)
+                  constraints:
+                    nullable: false

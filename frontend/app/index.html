@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ticket Manager</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="libs/bootstrap-css/css/bootstrap.css" type="text/css"></link>
+    <link rel="stylesheet" href="style/ticket_manager.css" type="text/css"></link>
+
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/bootstrap-css/js/bootstrap.js"></script>
+    <!--<script src="libs/angular-bootstrap/ui-bootstrap.js"></script> -->
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="libs/angular-resource/angular-resource.js"></script>
+    <script src="libs/angular-sessionstorage/angular-sessionstorage.js"></script>
+    <script src="libs/angular-jwt/dist/angular-jwt.js"></script>
+</head>
+<body ng-app="ticketManager">
+
+    <div ui-view="navbar" ng-cloak></div>
+
+    <div ui-view="content" ng-cloak></div>
+
+    <noscript>
+        <h1>You must enable javascript to view this page.</h1>
+    </noscript>
+
+
+    <script src="app.module.js"></script>
+    <script src="app.state.js"></script>
+
+    <script src="entities/ticket/ticket.service.js"></script>
+    <script src="entities/ticket/ticket.controller.js"></script>
+    <script src="entities/ticket/ticket.state.js"></script>
+    
+    <script src="config/http.config.js"></script>
+
+    <script src="services/auth/auth.service.js"></script>
+    <script src="services/auth/auth.jwt.service.js"></script>
+    <script src="services/auth/auth.interceptor.js"></script>
+    
+    <script src="services/principal.service.js"></script>
+ 
+    <script src="login/login.state.js"></script>
+    <script src="login/login.controller.js"></script>
+
+    <script src="home/home.state.js"></script>
+    <script src="layouts/navbar/navbar.controller.js"></script>
+</body>
+</html>
