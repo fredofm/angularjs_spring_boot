@@ -65,9 +65,10 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
        // with this option you must implement a UserDetailService
 
        auth.inMemoryAuthentication()
-        .withUser("admin")
-        .password("password")
-        .roles("ADMIN");
+        .withUser("admin").password("password").roles("ROLE_ADMIN")
+        .and()
+        .withUser("user").password("user").roles("ROLE_USER");
+        
     }
 
   @Bean

@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +35,7 @@ public class TicketManagerController {
         this.ticketService = ticketService;
     }
 
+    @Secured({"ROLE_USER", "ROLE_ADMIN"})
     @GetMapping("/tickets")
     public ResponseEntity<List<TicketDTO>> getTickets() {
         List<TicketDTO> ticketList = ticketService.findAll();
@@ -41,6 +43,7 @@ public class TicketManagerController {
         return ResponseEntity.ok(ticketList);
     }
 
+    @Secured({"ROLE_ADMIN"})
     @PostMapping("/tickets")
     public ResponseEntity<TicketDTO> createTicket(@RequestBody TicketDTO ticketDTO) throws URISyntaxException {
         if (ticketDTO.getTicketid() != null) {
